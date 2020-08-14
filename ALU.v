@@ -28,7 +28,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>FPGA-Implementation/README.md at master · k3shavkish0re/FPGA-Implementation</title>
+  <title>FPGA-Implementation/ALU.v at master · k3shavkish0re/FPGA-Implementation</title>
     <meta name="description" content="Contribute to k3shavkish0re/FPGA-Implementation development by creating an account on GitHub.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
@@ -39,10 +39,10 @@
     <meta property="og:image" content="https://avatars0.githubusercontent.com/u/44866479?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="k3shavkish0re/FPGA-Implementation" /><meta property="og:url" content="https://github.com/k3shavkish0re/FPGA-Implementation" /><meta property="og:description" content="Contribute to k3shavkish0re/FPGA-Implementation development by creating an account on GitHub." />
 
   <link rel="assets" href="https://github.githubassets.com/">
-    <link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/59054373/ws?session=eyJ2IjoiVjMiLCJ1Ijo1OTA1NDM3MywicyI6NTY5NzIwNjA0LCJjIjoyODkxMDI2NDUsInQiOjE1OTc0MTYzMDB9--f05ba33e4c024987f28281ed3dfe536e287b532e5cf65f8eeb6c94029a88cdd5" data-refresh-url="/_ws">
+    <link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/59054373/ws?session=eyJ2IjoiVjMiLCJ1Ijo1OTA1NDM3MywicyI6NTY5NzIwNjA0LCJjIjoxODA0MjMzODE0LCJ0IjoxNTk3NDE2MjU2fQ==--080ecabaedc95ece2b170395c990a882b2eddc64aab7d021744be97016242926" data-refresh-url="/_ws">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
 
-  <meta name="request-id" content="0DF1:3251:B44CD6:F1015D:5F36A36C" data-pjax-transient="true" /><meta name="html-safe-nonce" content="8e89574e6f29368962330894403425fcb7456811" data-pjax-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9rM3NoYXZraXNoMHJlL0ZQR0EtSW1wbGVtZW50YXRpb24iLCJyZXF1ZXN0X2lkIjoiMERGMTozMjUxOkI0NENENjpGMTAxNUQ6NUYzNkEzNkMiLCJ2aXNpdG9yX2lkIjoiMTQ4NTMyOTQ2MDY4NDQyMzQzOCIsInJlZ2lvbl9lZGdlIjoiYXAtc291dGgtMSIsInJlZ2lvbl9yZW5kZXIiOiJpYWQifQ==" data-pjax-transient="true" /><meta name="visitor-hmac" content="ded12bc6e0fc7bc2e112c8f6da3fcf274e13501d2755e732a7f9abf16fc87c0c" data-pjax-transient="true" />
+  <meta name="request-id" content="0DB5:3F2B:C097F2:101E77F:5F36A33F" data-pjax-transient="true" /><meta name="html-safe-nonce" content="8e89574e6f29368962330894403425fcb7456811" data-pjax-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9rM3NoYXZraXNoMHJlL0ZQR0EtSW1wbGVtZW50YXRpb24vZmluZC9tYXN0ZXIiLCJyZXF1ZXN0X2lkIjoiMERCNTozRjJCOkMwOTdGMjoxMDFFNzdGOjVGMzZBMzNGIiwidmlzaXRvcl9pZCI6IjE0ODUzMjk0NjA2ODQ0MjM0MzgiLCJyZWdpb25fZWRnZSI6ImFwLXNvdXRoLTEiLCJyZWdpb25fcmVuZGVyIjoiaWFkIn0=" data-pjax-transient="true" /><meta name="visitor-hmac" content="b856952bdffaed4cf02ee14d31ce941b9cd931e70a6391c8ec46b39052aabe40" data-pjax-transient="true" />
 
     <meta name="hovercard-subject-tag" content="repository:287524959" data-pjax-transient>
 
@@ -85,7 +85,7 @@
 
       <meta name="expected-hostname" content="github.com">
 
-      <meta name="js-proxy-site-detection-payload" content="MTkyMmJmZjFkYWUwOGFjODhlMzU4Mjg5OWFjMTk1NmY0ZDZiNDU3MTQxNzI4ODZmMDBkYWUwNDRiYzBjN2ViN3x7InJlbW90ZV9hZGRyZXNzIjoiMTA2LjIwNy4zNC4xMjciLCJyZXF1ZXN0X2lkIjoiMERGMTozMjUxOkI0NENENjpGMTAxNUQ6NUYzNkEzNkMiLCJ0aW1lc3RhbXAiOjE1OTc0MTYzMDAsImhvc3QiOiJnaXRodWIuY29tIn0=">
+      <meta name="js-proxy-site-detection-payload" content="OWQ0MDQxNDRlNTYwNjdhY2FmODUzOWYxODA2MGY1ZWUyYjIwMzljZTQyNWE0YjBjYWZmNDVmMGM5NWJlNzlhOXx7InJlbW90ZV9hZGRyZXNzIjoiMTA2LjIwNy4zNC4xMjciLCJyZXF1ZXN0X2lkIjoiMERCNTozRjJCOkMwOTdGMjoxMDFFNzdGOjVGMzZBMzNGIiwidGltZXN0YW1wIjoxNTk3NDE2MjU2LCJob3N0IjoiZ2l0aHViLmNvbSJ9">
 
     <meta name="enabled-features" content="MARKETPLACE_PENDING_INSTALLATIONS">
 
@@ -99,7 +99,7 @@
   <meta name="octolytics-dimension-user_id" content="44866479" /><meta name="octolytics-dimension-user_login" content="k3shavkish0re" /><meta name="octolytics-dimension-repository_id" content="287524959" /><meta name="octolytics-dimension-repository_nwo" content="k3shavkish0re/FPGA-Implementation" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="287524959" /><meta name="octolytics-dimension-repository_network_root_nwo" content="k3shavkish0re/FPGA-Implementation" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
 
 
-    <link rel="canonical" href="https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -120,7 +120,7 @@
   <body class="logged-in env-production page-responsive page-blob">
     
 
-    <input type="hidden" value="Vm3dbRM8XW4wmUI6bGsR83hEO5FdPaog9ID2Spg3OOIe0eyAkn9vH/eZoz108CDQLo3WxgFJgemMlwJ5b/P5gA==" data-csrf="true" class="js-data-websocket-refresh-csrf" />
+    <input type="hidden" value="LWsIs2wKlZNKEJerrHZY4Yjp1ZuYlx+Yd2xVuubjngxl1zle7Umn4o0Qdqy07WnC3iA4zMTjNFEPe6GJESdfbg==" data-csrf="true" class="js-data-websocket-refresh-csrf" />
 
     <div class="position-relative js-header-wrapper ">
       <a href="#start-of-content" class="p-3 bg-blue text-white show-on-focus js-skip-to-content">Skip to content</a>
@@ -173,7 +173,7 @@
           spellcheck="false"
           autocomplete="off"
           >
-          <input type="hidden" value="dLeIFGfA+VfgcChKU+KeZfqbhVA/8haSR70xjJmuELTSJ79nr/nszSczWlZ/o/hiwYGSt7JT47fYdN9nBmjKag==" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
+          <input type="hidden" value="FCHLMK+ku7FLnGfFPYLomnTxCaB6wtg9FpkULzYcPiyysfxDZ52uK4zfFdkRw46dT+seR/djLRiJUPrEqdrk8g==" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
           <input type="hidden" class="js-site-search-type-field" name="type" >
             <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
 
@@ -324,7 +324,7 @@
       <img class="avatar avatar-user" src="https://avatars0.githubusercontent.com/u/59054373?s=40&amp;v=4" width="20" height="20" alt="@juhirani" />
       juhirani
 </a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="3SR4WksA8e/UnMvpoS/TRqoOim1BmjpE0FWV5+s0HQhKwmZYoAMVkuJ3lWpXKVIVjlmBo2fdQuQAYfyOaGHY/Q==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="+Y6taWAlZ7c49vtUCTddcEgKzC8/J/1IywBPOBO6pqFuaLNriyaDyg4dpdf/MdwjbF3H4RlghegbNCZRkO9jVA==" />
       <button type="submit" class="Header-link mr-0 mr-md-3 py-2 py-md-3 border-top border-md-top-0 border-white-fade-15 d-md-none btn-link d-block width-full text-left" data-ga-click="Header, sign out, icon:logout" style="padding-left: 2px;">
         <svg class="octicon octicon-sign-out v-align-middle" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 2.75C2 1.784 2.784 1 3.75 1h2.5a.75.75 0 010 1.5h-2.5a.25.25 0 00-.25.25v10.5c0 .138.112.25.25.25h2.5a.75.75 0 010 1.5h-2.5A1.75 1.75 0 012 13.25V2.75zm10.44 4.5H6.75a.75.75 0 000 1.5h5.69l-1.97 1.97a.75.75 0 101.06 1.06l3.25-3.25a.75.75 0 000-1.06l-3.25-3.25a.75.75 0 10-1.06 1.06l1.97 1.97z"></path></svg>
         Sign out
@@ -344,7 +344,7 @@
   <div class="Header-item mr-0 mr-md-3 flex-order-1 flex-md-order-none">
     
 
-    <notification-indicator class="js-socket-channel" data-channel="eyJjIjoibm90aWZpY2F0aW9uLWNoYW5nZWQ6NTkwNTQzNzMiLCJ0IjoxNTk3NDE2MzAwfQ==--bb4b04d61393cd5a0e4c48780f71460b93629afcfa7ef0ae097908457a48ee61">
+    <notification-indicator class="js-socket-channel" data-channel="eyJjIjoibm90aWZpY2F0aW9uLWNoYW5nZWQ6NTkwNTQzNzMiLCJ0IjoxNTk3NDE2MjU2fQ==--c219599569cc6b614a199fd1b282b807f1eb3b5fbb1791df5618b83d11ce81b7">
       <a href="/notifications"
          class="Header-link notification-indicator position-relative tooltipped tooltipped-sw"
          aria-label="You have no unread notifications"
@@ -426,7 +426,7 @@
   data-team-hovercards-enabled>
   <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
     <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit "
-      role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:44866479,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:59054373,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;}}" data-hydro-click-hmac="a6e40051c56434ad03df6795fdf14c6d515bc071aa2832788ea7da1a1301d7bc">
+      role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:44866479,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:59054373,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;}}" data-hydro-click-hmac="70b7f1b4babd5212e83f1e39c0be9334dbf5faedf8ffa184bbc6bde8f0322b99">
       <div class="d-flex flex-items-center flex-items-stretch">
         <div class="f6 lh-condensed user-status-header d-flex user-status-emoji-only-header circle">
           <div class="user-status-emoji-container flex-shrink-0 mr-2 d-flex flex-items-center flex-justify-center lh-condensed-ultra v-align-bottom">
@@ -444,7 +444,7 @@
       </div>
     </summary>
     <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1">
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?circle=0&amp;compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="C5dlXfqhWUhoz/uIzVnjATxYtOcVHdwtIQbfa6wBuTgWCVhkvVzKrUar4V3UCc58pIOxF2Ju5P1S6NhcqpbP/Q==" />
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?circle=0&amp;compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="JOxFe5Fy2m3xsNolu+IblO1fknoXZenqSRUzCbt1WFw5cnhC1o9JiN/UwPCisjbpdYSXimAW0To6+zQ+veIumQ==" />
         <div class="Box-header bg-gray border-bottom p-3">
           <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog>
             <svg class="octicon octicon-x" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path></svg>
@@ -562,17 +562,17 @@
       </li>
       <li class="dropdown-divider" role="none"></li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2020-08-14T20:45:00+05:30">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2020-08-14T20:44:16+05:30">
             in 30 minutes
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2020-08-14T21:15:00+05:30">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2020-08-14T21:14:16+05:30">
             in 1 hour
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2020-08-15T00:15:00+05:30">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2020-08-15T00:14:16+05:30">
             in 4 hours
           </button>
         </li>
@@ -608,24 +608,24 @@
       </div>
       <div role="none" class="dropdown-divider"></div>
 
-    <a role="menuitem" class="dropdown-item" href="/juhirani" data-ga-click="Header, go to profile, text:your profile" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;target&quot;:&quot;YOUR_PROFILE&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="7fa1e267ceae4601bd0b225accdf5a1a2e4c95c502c1702826235e5b2c97c002" >Your profile</a>
+    <a role="menuitem" class="dropdown-item" href="/juhirani" data-ga-click="Header, go to profile, text:your profile" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;target&quot;:&quot;YOUR_PROFILE&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="3df4086251290d1c2a369d7d0d68b60ae2e815320eac736eb37387ba4f4b89fd" >Your profile</a>
 
-    <a role="menuitem" class="dropdown-item" href="/juhirani?tab=repositories" data-ga-click="Header, go to repositories, text:your repositories" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;target&quot;:&quot;YOUR_REPOSITORIES&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="d33a0cbc55fbad33530bfa337d581ca42873b89d2d80c086af81009c888cf851" >Your repositories</a>
-
-
-
-    <a role="menuitem" class="dropdown-item" href="/juhirani?tab=projects" data-ga-click="Header, go to projects, text:your projects" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;target&quot;:&quot;YOUR_PROJECTS&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="51f25a8a107f9a1cf7e573bc4f85cc27a4f35ba82318a85826d4f719520e59d4" >Your projects</a>
+    <a role="menuitem" class="dropdown-item" href="/juhirani?tab=repositories" data-ga-click="Header, go to repositories, text:your repositories" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;target&quot;:&quot;YOUR_REPOSITORIES&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="9f41f295174cb4032d3954da1c5151783ff89876b8827514b52fc281643a1cde" >Your repositories</a>
 
 
-    <a role="menuitem" class="dropdown-item" href="/juhirani?tab=stars" data-ga-click="Header, go to starred repos, text:your stars" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;target&quot;:&quot;YOUR_STARS&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="0b492b3b8479727f1994e3d97b463578c754e03d3cffa72b7bcef5a8f3fba923" >Your stars</a>
-      <a role="menuitem" class="dropdown-item" href="https://gist.github.com/mine" data-ga-click="Header, your gists, text:your gists" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;target&quot;:&quot;YOUR_GISTS&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="bc50389dbd724149d4f48d9fe48af4704d1826a2bba499289bda27c2e246baaa" >Your gists</a>
+
+    <a role="menuitem" class="dropdown-item" href="/juhirani?tab=projects" data-ga-click="Header, go to projects, text:your projects" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;target&quot;:&quot;YOUR_PROJECTS&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="181f5135d1ba048259d3dc4801f317922b2c020b427a6378a09fba653fb0a415" >Your projects</a>
+
+
+    <a role="menuitem" class="dropdown-item" href="/juhirani?tab=stars" data-ga-click="Header, go to starred repos, text:your stars" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;target&quot;:&quot;YOUR_STARS&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="e9e68eaa6c3abd5169a4952fd27b80b06559680a41cd54a811dc06fa22d5f273" >Your stars</a>
+      <a role="menuitem" class="dropdown-item" href="https://gist.github.com/mine" data-ga-click="Header, your gists, text:your gists" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;target&quot;:&quot;YOUR_GISTS&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="4644722430a2b9042b76207b2fde478286d551c9d6c9fb41441552331db3aae4" >Your gists</a>
 
 
 
 
 
     <div role="none" class="dropdown-divider"></div>
-      <a role="menuitem" class="dropdown-item" href="/settings/billing" data-ga-click="Header, go to billing, text:upgrade" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;target&quot;:&quot;UPGRADE&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="56aa96f6f2820c5b77a0aa07be5563465875a2ace806b70e29e73bd4ba592b2b" >Upgrade</a>
+      <a role="menuitem" class="dropdown-item" href="/settings/billing" data-ga-click="Header, go to billing, text:upgrade" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;target&quot;:&quot;UPGRADE&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="f9a0bb0680d766ceb067c7f7fcfcf48b931376aa5eaffdd157342b78c2cde3ff" >Upgrade</a>
       
 <div id="feature-enrollment-toggle" class="hide-sm hide-md feature-preview-details position-relative">
   <button
@@ -633,24 +633,24 @@
     class="dropdown-item btn-link"
     role="menuitem"
     data-feature-preview-trigger-url="/users/juhirani/feature_previews"
-    data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}"
-    data-feature-preview-close-hmac="ad92ca3a41175ec522e78ad73c30b937a1f0dd3e9d924b22dab76d7a21d07142"
-    data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}"
-    data-hydro-click-hmac="4cc7e5d024f83ba516cf21fd07d82462c64ef4539d4b50efb78a2a850d59568e"
+    data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}"
+    data-feature-preview-close-hmac="75d079d4cd26a75cab139c772b8cf34feec295265ac995235a2085d5495cb632"
+    data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}"
+    data-hydro-click-hmac="cdd7b52ef69468d0afaefe66b835b34b3acb2b225a5f5876451814039aaa1ce1"
   >
     Feature preview
   </button>
     <span class="feature-preview-indicator js-feature-preview-indicator" hidden></span>
 </div>
 
-    <a role="menuitem" class="dropdown-item" href="https://docs.github.com" data-ga-click="Header, go to help, text:help" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;target&quot;:&quot;HELP&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="aff665baaf5de9d37e1d7b4a09375169f0749c1427a03c824983786b422a9757" >Help</a>
-    <a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;target&quot;:&quot;SETTINGS&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="c0ee6414e68a2c49fc08922450877216bca2f5c279e6e1af7e93fb0930cf8aae" >Settings</a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="JB0JcT3rcWZHJCG7wm6CSEuaqWpEH9hPnxQKHxE43/uz+xdz1uiVG3HPfzg0aAMbb82ipGJYoO9PIGN2km0aDg==" />
+    <a role="menuitem" class="dropdown-item" href="https://docs.github.com" data-ga-click="Header, go to help, text:help" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;target&quot;:&quot;HELP&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="a23ea358232e76bd4a8e5eda41e95c7cdfbb2322f4ae5703bd063e9756478be2" >Help</a>
+    <a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;target&quot;:&quot;SETTINGS&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="2c55f2884d3d5b35b4386a76fd6ee6ab9850211135ff980f74fb2d844e624fdf" >Settings</a>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="R9/lPMyAAJ6gk2VE58g+oSv4DWoeG5C0Cn3FGH2IxK7QOfs+J4Pk45Z4O8cRzr/yD68GpDhc6BTaSaxx/t0BWw==" />
       
-      <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;target&quot;:&quot;SIGN_OUT&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="38038650a9500972fab5df45dd1fd7f39252de159852fb65e6cb3d4fc3dcb2f9"  role="menuitem">
+      <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;target&quot;:&quot;SIGN_OUT&quot;,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="c7bd6032205b95b229a47203cbbab935d2c7c88caf347eee64151fbb297538d4"  role="menuitem">
         Sign out
       </button>
-      <input type="text" name="required_field_e9ad" hidden="hidden" class="form-control" /><input type="hidden" name="timestamp" value="1597416300880" class="form-control" /><input type="hidden" name="timestamp_secret" value="c15438597a145eefc73417398595616b8695b2a6abdfb6ee860bdfb37408192e" class="form-control" />
+      <input type="text" name="required_field_3909" hidden="hidden" class="form-control" /><input type="hidden" name="timestamp" value="1597416256161" class="form-control" /><input type="hidden" name="timestamp_secret" value="0c0b43f78afe36f4564707d7a404e78ff291bebb7019414394aed4db9225c1cd" class="form-control" />
 </form>  </details-menu>
 </details>
 
@@ -710,10 +710,10 @@
       <p class="shelf-lead">
           Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
       </p>
-      <a class="btn btn-primary shelf-cta" target="_blank" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;READ_GUIDE&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="fae06d11e6eb79a2023b1e53c31256f774774b1b504176be761c827437b0f36f" href="https://guides.github.com/activities/hello-world/">Read the guide</a>
+      <a class="btn btn-primary shelf-cta" target="_blank" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;READ_GUIDE&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="9ba23d059f4d2684b3b94438ac176db96abe1769cab952cd313f4237bd7af437" href="https://guides.github.com/activities/hello-world/">Read the guide</a>
     </div>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="shelf-dismiss js-notice-dismiss" action="/dashboard/dismiss_bootcamp" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="sTAQJJcQCMvL4Uxa+czdVV6e3VjFCgH2LRJirQUVulO2FvvAbl7QAwKxKS0cUGrYGlynm8Xurgwm+34pVKqqIg==" />
-      <button name="button" type="submit" class="mr-1 close-button tooltipped tooltipped-w" aria-label="Hide this notice forever" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;DISMISS_BANNER&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="009144aa9040190e10bdc8f32bf3666c863d9eec2e3de9809edb3aa5329e8ec6">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="shelf-dismiss js-notice-dismiss" action="/dashboard/dismiss_bootcamp" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="1a8Rki+8x5rWOLzm6PbNNd+UJSvP89b/yh4nnRhduArSifp21vIfUh9o2ZENanq4m1Zf6M8XeQXB9zsZSeKoew==" />
+      <button name="button" type="submit" class="mr-1 close-button tooltipped tooltipped-w" aria-label="Hide this notice forever" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;DISMISS_BANNER&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="13a0d86f5346ea6183d596bde1113005063b191790c6165b301fe02e37585d98">
         <svg aria-label="Hide this notice forever" class="octicon octicon-x v-align-text-top" viewBox="0 0 16 16" version="1.1" width="16" height="16" role="img"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path></svg>
 </button></form>  </div>
 </div>
@@ -750,10 +750,10 @@
       <ul class="pagehead-actions flex-shrink-0 d-none d-md-inline" style="padding: 2px 0;">
 
   <li>
-        <form data-remote="true" class="d-flex js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="cyPly+J5IcBtKXzN3vqePtiD9i3dBBWaoFUjWFzvI1Ie06WC+c6CaJNewkpePjp2MEnND0/OZTwbC64zdtMaXQ==" />      <input type="hidden" name="repository_id" value="287524959">
+        <form data-remote="true" class="d-flex js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="lQDV/Hev+yjSufF06u+H0tvIaVhDhJYdjh4Kma3kPgT48JW1bBhYgCzOT/NqKyOaMwJSetFO5rs1QIfyh9gHCw==" />      <input type="hidden" name="repository_id" value="287524959">
 
       <details class="details-reset details-overlay select-menu hx_rsm">
-        <summary class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="3ff2d3b9f397e642c89d5d95a0012b2a3d2094a261a46be0f1485e71af7ca518" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
+        <summary class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="f80c6efcff29132c41bd5c1aec70f3e03521aab7dc71de7eb00d9502fd2a5ec4" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
               <svg height="16" class="octicon octicon-eye" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.679 7.932c.412-.621 1.242-1.75 2.366-2.717C5.175 4.242 6.527 3.5 8 3.5c1.473 0 2.824.742 3.955 1.715 1.124.967 1.954 2.096 2.366 2.717a.119.119 0 010 .136c-.412.621-1.242 1.75-2.366 2.717C10.825 11.758 9.473 12.5 8 12.5c-1.473 0-2.824-.742-3.955-1.715C2.92 9.818 2.09 8.69 1.679 8.068a.119.119 0 010-.136zM8 2c-1.981 0-3.67.992-4.933 2.078C1.797 5.169.88 6.423.43 7.1a1.619 1.619 0 000 1.798c.45.678 1.367 1.932 2.637 3.024C4.329 13.008 6.019 14 8 14c1.981 0 3.67-.992 4.933-2.078 1.27-1.091 2.187-2.345 2.637-3.023a1.619 1.619 0 000-1.798c-.45-.678-1.367-1.932-2.637-3.023C11.671 2.992 9.981 2 8 2zm0 8a2 2 0 100-4 2 2 0 000 4z"></path></svg>
               Watch
           </span>
@@ -825,18 +825,18 @@
 
   <li>
       <div class="js-toggler-container js-social-container starring-container ">
-    <form class="starred js-social-form" action="/k3shavkish0re/FPGA-Implementation/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GydU7Z5Y5iLhTASfRZ+y/yAD2jhxv5jZ+p8zwDtuMZQlDB35HrNlh5fngD6mxfNp2yKSiUGNYbWhapzqnsvpkA==" />
+    <form class="starred js-social-form" action="/k3shavkish0re/FPGA-Implementation/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="ITkfWHRrrp/+f0gHOs84KGZM9J8rVN0mm+hy+chkfAUfElZM9IAtOojUzKbZlXm+nW28LhtmJErAHd3TbcGkAQ==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count  js-toggler-target" aria-label="Unstar this repository" title="Unstar k3shavkish0re/FPGA-Implementation" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="5308bf022772aad17b8091aed92e8437730066ad9df15e898450bbaacfe00639" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg height="16" class="octicon octicon-star-fill" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg>
+      <button type="submit" class="btn btn-sm btn-with-count  js-toggler-target" aria-label="Unstar this repository" title="Unstar k3shavkish0re/FPGA-Implementation" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="5e94ccadb114cc7e30aa00ff03a2da4d29bca4815d961e1b945b537c8dbb230a" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg height="16" class="octicon octicon-star-fill" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg>
         Unstar
 </button>        <a class="social-count js-social-count" href="/k3shavkish0re/FPGA-Implementation/stargazers"
            aria-label="0 users starred this repository">
            0
         </a>
 </form>
-    <form class="unstarred js-social-form" action="/k3shavkish0re/FPGA-Implementation/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="GjPIbLMN4D/aYXbVv3aDbGajymwVJvsM7E+II/D++D5Vp/A0UaG0DdTFnPIuyXg0SAOsUpIGaQ63JnIXCFHgiA==" />
+    <form class="unstarred js-social-form" action="/k3shavkish0re/FPGA-Implementation/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="jOmpGiNcEje+zSsCg4w2cI1GBL1HfIUlpc+aAO/PYHLDfZFCwfBGBbBpwSUSM80oo+Zig8BcFyf+pmA0F2B4xA==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count  js-toggler-target" aria-label="Unstar this repository" title="Star k3shavkish0re/FPGA-Implementation" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="5f5833db808bb0a196dfef9e2b44a29e0671bd1571029123a2149d67e3858bde" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg height="16" class="octicon octicon-star" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>
+      <button type="submit" class="btn btn-sm btn-with-count  js-toggler-target" aria-label="Unstar this repository" title="Star k3shavkish0re/FPGA-Implementation" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="e4766928bee22f20df1f08829a619ee9e2a26947460db9be58828f0a6c8dda0d" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg height="16" class="octicon octicon-star" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>
         Star
 </button>        <a class="social-count js-social-count" href="/k3shavkish0re/FPGA-Implementation/stargazers"
            aria-label="0 users starred this repository">
@@ -847,8 +847,8 @@
   </li>
 
   <li>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/k3shavkish0re/FPGA-Implementation/fork" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="4fzoFJIzIsrp1QVHQ+CEG+kgsD22+ZnFXLSeFLpBlb4G1BFwJEJAG0s6ygQ6VZNFUvpfYeN/03PCtYyKi/T1Yw==" />
-            <button class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="fe312007b112032b07af427f11fe0df4e45ec0e2d3924ca00009580bf8eec4a2" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" type="submit" title="Fork your own copy of k3shavkish0re/FPGA-Implementation to your account" aria-label="Fork your own copy of k3shavkish0re/FPGA-Implementation to your account">              <svg class="octicon octicon-repo-forked" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path></svg>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/k3shavkish0re/FPGA-Implementation/fork" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="DwKcV1MIO+/YwOONuBIJzZG/XR+gNGcEdZa2Q8irN3roKmUz5XlZPnovLM7Bpx6TKmWyQ/WyLbLrl6Td+R5Xpw==" />
+            <button class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="2ca27f75f2245faa0346c6e618db818eccbc1f71b4468f20995a826fc4000793" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" type="submit" title="Fork your own copy of k3shavkish0re/FPGA-Implementation to your account" aria-label="Fork your own copy of k3shavkish0re/FPGA-Implementation to your account">              <svg class="octicon octicon-repo-forked" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path></svg>
               Fork
 </button></form>
     <a href="/k3shavkish0re/FPGA-Implementation/network/members" class="social-count"
@@ -970,9 +970,9 @@
   
 
 
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/k3shavkish0re/FPGA-Implementation/blob/d8616c2d14fc2a15fd543303ce5bca982038840a/README.md">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/k3shavkish0re/FPGA-Implementation/blob/d8616c2d14fc2a15fd543303ce5bca982038840a/ALU.v">Permalink</a>
 
-    <!-- blob contrib key: blob_contributors:v22:a38392b6ba5a2e048698c51dc925172e -->
+    <!-- blob contrib key: blob_contributors:v22:7353a76568cf8c7a4ec8f0d6b2fc233b -->
     
 
     <div class="d-flex flex-items-start flex-shrink-0 pb-3 flex-wrap flex-md-nowrap flex-justify-between flex-md-justify-start">
@@ -986,7 +986,7 @@
     <span class="dropdown-caret"></span>
   </summary>
 
-  <details-menu class="SelectMenu SelectMenu--hasFilter" src="/k3shavkish0re/FPGA-Implementation/refs/master/README.md?source_action=show&amp;source_controller=blob" preload>
+  <details-menu class="SelectMenu SelectMenu--hasFilter" src="/k3shavkish0re/FPGA-Implementation/refs/master/ALU.v?source_action=show&amp;source_controller=blob" preload>
     <div class="SelectMenu-modal">
       <include-fragment class="SelectMenu-loading" aria-label="Menu is loading">
         <svg class="octicon octicon-octoface anim-pulse" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"></path></svg>
@@ -996,7 +996,7 @@
 </details>
 
       <h2 id="blob-path" class="breadcrumb flex-auto min-width-0 text-normal mx-0 mx-md-3 width-full width-md-auto flex-order-1 flex-md-order-none mt-3 mt-md-0">
-        <span class="js-repo-root text-bold"><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/k3shavkish0re/FPGA-Implementation"><span>FPGA-Implementation</span></a></span></span><span class="separator">/</span><strong class="final-path">README.md</strong>
+        <span class="js-repo-root text-bold"><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/k3shavkish0re/FPGA-Implementation"><span>FPGA-Implementation</span></a></span></span><span class="separator">/</span><strong class="final-path">ALU.v</strong>
       </h2>
       <a href="/k3shavkish0re/FPGA-Implementation/find/master"
             class="js-pjax-capture-input btn mr-2 d-none d-md-block"
@@ -1013,7 +1013,7 @@
 
 </summary>            <ul class="dropdown-menu dropdown-menu-sw">
             <li class="d-block d-md-none">
-              <a class="dropdown-item d-flex flex-items-baseline" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FIND_FILE_BUTTON&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/README.md&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="9bfb7fdc2915ca38b5009b2f6a5c5e0223c9d33841dc5a939a165730a4876359" data-ga-click="Repository, find file, location:repo overview" data-hotkey="t" data-pjax="true" href="/k3shavkish0re/FPGA-Implementation/find/master">
+              <a class="dropdown-item d-flex flex-items-baseline" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FIND_FILE_BUTTON&quot;,&quot;repository_id&quot;:287524959,&quot;originating_url&quot;:&quot;https://github.com/k3shavkish0re/FPGA-Implementation/blob/master/ALU.v&quot;,&quot;user_id&quot;:59054373}}" data-hydro-click-hmac="5a004908d315d3cab9d06d464f33002126f84eb42040cab2d053e07b56cd8515" data-ga-click="Repository, find file, location:repo overview" data-hotkey="t" data-pjax="true" href="/k3shavkish0re/FPGA-Implementation/find/master">
                 <span class="flex-auto">Go to file</span>
                 <span class="text-small text-gray" aria-hidden="true">T</span>
 </a>            </li>
@@ -1027,7 +1027,7 @@
             </li>
             <li class="dropdown-divider" role="none"></li>
             <li>
-              <clipboard-copy value="README.md" class="dropdown-item cursor-pointer" data-toggle-for="blob-more-options-details">
+              <clipboard-copy value="ALU.v" class="dropdown-item cursor-pointer" data-toggle-for="blob-more-options-details">
                 Copy path
               </clipboard-copy>
             </li>
@@ -1038,69 +1038,17 @@
 
 
     <div class="Box d-flex flex-column flex-shrink-0 mb-3">
-      
-  <div class="Box-header Box-header--blue Details js-details-container">
-      <div class="d-flex flex-items-center">
-        <span class="flex-shrink-0 ml-n1 mr-n1 mt-n1 mb-n1">
-          <a rel="author" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/users/k3shavkish0re/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/k3shavkish0re"><img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/44866479?s=48&amp;v=4" width="24" height="24" alt="@k3shavkish0re" /></a>
-        </span>
-        <div class="flex-1 d-flex flex-items-center ml-3 min-width-0">
-          <div class="css-truncate css-truncate-overflow">
-            <a class="text-bold link-gray-dark" rel="author" data-hovercard-type="user" data-hovercard-url="/users/k3shavkish0re/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/k3shavkish0re">k3shavkish0re</a>
-
-              <span>
-                <a data-pjax="true" title="Initial commit" class="link-gray" href="/k3shavkish0re/FPGA-Implementation/commit/32e0b5a1b803dc17da230ec9d23ca42aac9f6094">Initial commit</a>
-              </span>
-          </div>
-
-
-          <span class="ml-2">
-            <include-fragment accept="text/fragment+html" src="/k3shavkish0re/FPGA-Implementation/commit/32e0b5a1b803dc17da230ec9d23ca42aac9f6094/rollup?direction=e" class="d-inline"></include-fragment>
-          </span>
+      <include-fragment src="/k3shavkish0re/FPGA-Implementation/contributors/master/ALU.v" class="commit-loader">
+        <div class="Box-header Box-header--blue d-flex flex-items-center">
+          <div class="Skeleton avatar avatar-user flex-shrink-0 ml-n1 mr-n1 mt-n1 mb-n1" style="width:24px;height:24px;"></div>
+          <div class="Skeleton Skeleton--text col-5 ml-2">&nbsp;</div>
         </div>
-        <div class="ml-3 d-flex flex-shrink-0 flex-items-center flex-justify-end text-gray no-wrap">
-          <span class="d-none d-md-inline">
-            <span>Latest commit</span>
-            <a class="text-small text-mono link-gray" href="/k3shavkish0re/FPGA-Implementation/commit/32e0b5a1b803dc17da230ec9d23ca42aac9f6094" data-pjax>32e0b5a</a>
-            <span itemprop="dateModified"><relative-time datetime="2020-08-14T12:12:59Z" class="no-wrap">Aug 14, 2020</relative-time></span>
-          </span>
 
-          <a data-pjax href="/k3shavkish0re/FPGA-Implementation/commits/master/README.md" class="ml-3 no-wrap link-gray-dark no-underline">
-            <svg text="gray" height="16" class="octicon octicon-history text-gray" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"></path></svg>
-            <span class="d-none d-sm-inline">
-              <strong>History</strong>
-            </span>
-          </a>
+        <div class="Box-body d-flex flex-items-center" >
+          <div class="Skeleton Skeleton--text col-1">&nbsp;</div>
+          <span class="text-red h6 loader-error">Cannot retrieve contributors at this time</span>
         </div>
-      </div>
-
-  </div>
-
-  <div class="Box-body d-flex flex-items-center flex-auto border-bottom-0 flex-wrap" >
-    <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark float-left mr-3" id="blob_contributors_box">
-      <summary class="link-gray-dark">
-        <svg text="gray" height="16" class="octicon octicon-people text-gray" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"></path></svg>
-        <strong>1</strong>
-        
-        contributor
-      </summary>
-      <details-dialog
-        class="Box Box--overlay d-flex flex-column anim-fade-in fast"
-        aria-label="Users who have contributed to this file"
-        src="/k3shavkish0re/FPGA-Implementation/contributors-list/master/README.md" preload>
-        <div class="Box-header">
-          <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog>
-            <svg class="octicon octicon-x" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path></svg>
-          </button>
-          <h3 class="Box-title">
-            Users who have contributed to this file
-          </h3>
-        </div>
-        <include-fragment class="octocat-spinner my-3" aria-label="Loading..."></include-fragment>
-      </details-dialog>
-    </details>
-  </div>
-    </div>
+</include-fragment>    </div>
 
 
 
@@ -1113,16 +1061,16 @@
 <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
   <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
 
-      1 lines (1 sloc)
+      28 lines (27 sloc)
       <span class="file-info-divider"></span>
-    21 Bytes
+    581 Bytes
   </div>
 
   <div class="d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between">
 
     <div class="BtnGroup">
-      <a href="/k3shavkish0re/FPGA-Implementation/raw/master/README.md" id="raw-url" role="button" class="btn btn-sm BtnGroup-item ">Raw</a>
-        <a href="/k3shavkish0re/FPGA-Implementation/blame/master/README.md" data-hotkey="b" role="button" class="btn js-update-url-with-hash btn-sm BtnGroup-item ">Blame</a>
+      <a href="/k3shavkish0re/FPGA-Implementation/raw/master/ALU.v" id="raw-url" role="button" class="btn btn-sm BtnGroup-item ">Raw</a>
+        <a href="/k3shavkish0re/FPGA-Implementation/blame/master/ALU.v" data-hotkey="b" role="button" class="btn js-update-url-with-hash btn-sm BtnGroup-item ">Blame</a>
     </div>
 
     <div>
@@ -1134,13 +1082,13 @@
               <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.75 2.5h12.5a.25.25 0 01.25.25v7.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25v-7.5a.25.25 0 01.25-.25zM14.25 1H1.75A1.75 1.75 0 000 2.75v7.5C0 11.216.784 12 1.75 12h3.727c-.1 1.041-.52 1.872-1.292 2.757A.75.75 0 004.75 16h6.5a.75.75 0 00.565-1.243c-.772-.885-1.193-1.716-1.292-2.757h3.727A1.75 1.75 0 0016 10.25v-7.5A1.75 1.75 0 0014.25 1zM9.018 12H6.982a5.72 5.72 0 01-.765 2.5h3.566a5.72 5.72 0 01-.765-2.5z"></path></svg>
           </a>
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/k3shavkish0re/FPGA-Implementation/edit/master/README.md" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="CskJwaThMS/aKSoL4rl2LhGBqqmrYQB7wo7HR1BqmzbiCvbk1p0rxDOhGS30lZFn/oF/S8YlLwDz/5x2vBpfAw==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/k3shavkish0re/FPGA-Implementation/edit/master/ALU.v" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="iHQGb9egSjW8YI7fysDCHw27AszOZWbSAfub2vuPgyTe2H8eFbB64hI0gaye7wtrsX/Fc/oh+cjRtjdvTn+sWw==" />
             <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
               aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with>
               <svg class="octicon octicon-pencil" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z"></path></svg>
             </button>
 </form>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/k3shavkish0re/FPGA-Implementation/delete/master/README.md" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="7KHAXzbFJ4iMbjQSnorWR168VkKfHrzE7eZINuZmhpMW4wOuk3hyfvZjJmJeLjhJygy0wRdlQdZWLmNp/5SW3g==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/k3shavkish0re/FPGA-Implementation/delete/master/ALU.v" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="tCiwZHl3ZaFuFHqWax5yCGsoI/uIj5JhhN6v0DGKgplg+g6oYZmwpEFm9nqkZpMJWV0p8XfU0w20TY7WF/MoYQ==" />
             <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
               aria-label="Fork this project and delete the file" data-disable-with>
               <svg class="octicon octicon-trashcan" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75zM4.496 6.675a.75.75 0 10-1.492.15l.66 6.6A1.75 1.75 0 005.405 15h5.19c.9 0 1.652-.681 1.741-1.576l.66-6.6a.75.75 0 00-1.492-.149l-.66 6.6a.25.25 0 01-.249.225h-5.19a.25.25 0 01-.249-.225l-.66-6.6z"></path></svg>
@@ -1152,9 +1100,146 @@
 
 
       
-  <div id="readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6">
-    <article class="markdown-body entry-content container-lg" itemprop="text"><h1><a id="user-content-fpga-implementation" class="anchor" aria-hidden="true" href="#fpga-implementation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>FPGA-Implementation</h1>
-</article>
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-verilog ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
+      <tr>
+        <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">module</span> <span class="pl-en">mux41</span>(A,B,S,Y);</td>
+      </tr>
+      <tr>
+        <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="LC2" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">input</span>[<span class="pl-c1">31</span>:<span class="pl-c1">0</span>]A,B;</td>
+      </tr>
+      <tr>
+        <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="LC3" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">input</span> [<span class="pl-c1">1</span>:<span class="pl-c1">0</span>]S;</td>
+      </tr>
+      <tr>
+        <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="LC4" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">output</span> [<span class="pl-c1">31</span>:<span class="pl-c1">0</span>] Y;</td>
+      </tr>
+      <tr>
+        <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="LC5" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">reg</span> [<span class="pl-c1">31</span>:<span class="pl-c1">0</span>] Y1;</td>
+      </tr>
+      <tr>
+        <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="LC6" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">assign</span> Y<span class="pl-k">=</span>Y1;</td>
+      </tr>
+      <tr>
+        <td id="L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="LC7" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">always</span>@(<span class="pl-k">*</span>)</td>
+      </tr>
+      <tr>
+        <td id="L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="LC8" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">begin</span></td>
+      </tr>
+      <tr>
+        <td id="L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="LC9" class="blob-code blob-code-inner js-file-line">     <span class="pl-k">case</span>(S)</td>
+      </tr>
+      <tr>
+        <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="LC10" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">2&#39;b00</span> : <span class="pl-k">begin</span></td>
+      </tr>
+      <tr>
+        <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="LC11" class="blob-code blob-code-inner js-file-line">                <span class="pl-k">assign</span> Y1<span class="pl-k">=</span>A<span class="pl-k">+</span>B;</td>
+      </tr>
+      <tr>
+        <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="LC12" class="blob-code blob-code-inner js-file-line">                <span class="pl-k">end</span></td>
+      </tr>
+      <tr>
+        <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="LC13" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">2&#39;b01</span> : <span class="pl-k">begin</span></td>
+      </tr>
+      <tr>
+        <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="LC14" class="blob-code blob-code-inner js-file-line">                <span class="pl-k">assign</span> Y1<span class="pl-k">=</span>A<span class="pl-k">-</span>B;</td>
+      </tr>
+      <tr>
+        <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="LC15" class="blob-code blob-code-inner js-file-line">                <span class="pl-k">end</span></td>
+      </tr>
+      <tr>
+        <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="LC16" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">2&#39;b10</span> : <span class="pl-k">begin</span></td>
+      </tr>
+      <tr>
+        <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="LC17" class="blob-code blob-code-inner js-file-line">                <span class="pl-k">assign</span> Y1<span class="pl-k">=</span>A<span class="pl-k">&amp;</span>B;</td>
+      </tr>
+      <tr>
+        <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="LC18" class="blob-code blob-code-inner js-file-line">                <span class="pl-k">end</span></td>
+      </tr>
+      <tr>
+        <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="LC19" class="blob-code blob-code-inner js-file-line">        <span class="pl-c1">2&#39;b11</span> : <span class="pl-k">begin</span></td>
+      </tr>
+      <tr>
+        <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="LC20" class="blob-code blob-code-inner js-file-line">                <span class="pl-k">assign</span> Y1<span class="pl-k">=</span>A<span class="pl-k">|</span>B;</td>
+      </tr>
+      <tr>
+        <td id="L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="LC21" class="blob-code blob-code-inner js-file-line">                <span class="pl-k">end</span></td>
+      </tr>
+      <tr>
+        <td id="L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="LC22" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">default</span> : <span class="pl-k">begin</span></td>
+      </tr>
+      <tr>
+        <td id="L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="LC23" class="blob-code blob-code-inner js-file-line">                  <span class="pl-k">assign</span> Y1<span class="pl-k">=</span>A^B;</td>
+      </tr>
+      <tr>
+        <td id="L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="LC24" class="blob-code blob-code-inner js-file-line">                  <span class="pl-k">end</span></td>
+      </tr>
+      <tr>
+        <td id="L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="LC25" class="blob-code blob-code-inner js-file-line">     <span class="pl-k">endcase</span></td>
+      </tr>
+      <tr>
+        <td id="L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="LC26" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">end</span></td>
+      </tr>
+      <tr>
+        <td id="L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="LC27" class="blob-code blob-code-inner js-file-line"><span class="pl-k">endmodule</span></td>
+      </tr>
+      <tr>
+        <td id="L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="LC28" class="blob-code blob-code-inner js-file-line">          </td>
+      </tr>
+</table>
+
+  <details class="details-reset details-overlay BlobToolbar position-absolute js-file-line-actions dropdown d-none" aria-hidden="true">
+    <summary class="btn-octicon ml-0 px-2 p-0 bg-white border border-gray-dark rounded-1" aria-label="Inline file action toolbar">
+      <svg class="octicon octicon-kebab-horizontal" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm13 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+    </summary>
+    <details-menu>
+      <ul class="BlobToolbar-dropdown dropdown-menu dropdown-menu-se mt-2" style="width:185px">
+        <li>
+          <clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-lines" style="cursor:pointer;">
+            Copy lines
+          </clipboard-copy>
+        </li>
+        <li>
+          <clipboard-copy role="menuitem" class="dropdown-item" id="js-copy-permalink" style="cursor:pointer;">
+            Copy permalink
+          </clipboard-copy>
+        </li>
+        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/k3shavkish0re/FPGA-Implementation/blame/d8616c2d14fc2a15fd543303ce5bca982038840a/ALU.v">View git blame</a></li>
+          <li><a class="dropdown-item" id="js-new-issue" role="menuitem" href="/k3shavkish0re/FPGA-Implementation/issues/new">Reference in new issue</a></li>
+      </ul>
+    </details-menu>
+  </details>
+
   </div>
 
     </div>
